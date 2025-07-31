@@ -1,50 +1,78 @@
-/* Global Color Variables */
+/* src/index.css */
+
+/* Global Variables */
 :root {
-  --primary-bg: #fff8dc;        /* Light yellow background */
-  --primary-color: #ffcc00;     /* Bright yellow for highlights */
-  --dark-color: #000000;        /* Black text */
-  --text-color: #333333;        /* Default text */
-  --hover-color: #f4d03f;       /* Hover effect */
+  --primary-bg: #fefae0;        /* Light yellow */
+  --primary-color: #FFD700;     /* Bright yellow */
+  --hover-color: #ffe066;       /* Slightly darker yellow */
+  --text-color: #000000;        /* Black */
+  --font-family: 'Segoe UI', sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--primary-bg);
   color: var(--text-color);
 }
 
+/* Buttons */
 button {
   cursor: pointer;
   border: none;
   border-radius: 6px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
   background-color: var(--hover-color);
 }
-/* src/index.css */
-
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fefae0; /* light yellow background */
-  color: #000000; /* black text */
-}
 
 /* Sidebar Theme */
 .sidebar {
-  background-color: #FFD700; /* yellow */
-  color: black;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  height: 100vh;
+  padding: 16px;
+  width: 240px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
 }
 
-.sidebar a {
-  color: black;
+.sidebar a,
+.sidebar-item {
+  display: block;
+  padding: 10px 12px;
+  color: var(--text-color);
   text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: background-color 0.2s ease;
 }
 
-.sidebar a.active {
+.sidebar-item:hover {
+  background-color: var(--hover-color);
+}
+
+.sidebar-item.active {
+  background-color: var(--text-color); /* black */
+  color: white;
+}
+
+.sidebar-title {
   font-weight: bold;
-  background-color: #ffe066; /* slightly darker yellow for active */
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.sidebar-version {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.75rem;
+  color: #555;
 }
