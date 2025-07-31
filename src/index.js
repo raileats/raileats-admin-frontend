@@ -4,3 +4,4 @@ import AdminPanel from "./components/AdminPanel";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AdminPanel />);
+            import './index.css';
