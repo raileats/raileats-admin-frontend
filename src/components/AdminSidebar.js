@@ -50,3 +50,12 @@ const AdminSidebar = ({ activeSection, setActiveSection }) => {
 };
 
 export default AdminSidebar;
+// src/components/AdminSidebar.js
+
+<div className="sidebar">
+  <ul>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Orders</a></li>
+    ...
+  </ul>
+</div>
