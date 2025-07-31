@@ -18,3 +18,35 @@ function AdminSidebar() {
 }
 
 export default AdminSidebar;
+import React from 'react';
+import './AdminSidebar.css';
+
+const AdminSidebar = ({ activeSection, setActiveSection }) => {
+  const menuItems = [
+    'Dashboard',
+    'Orders',
+    'Outlets',
+    'Menu',
+    'Master',
+    'Train',
+    'Logout',
+  ];
+
+  return (
+    <div className="sidebar">
+      <div className="sidebar-title">RailEats Admin</div>
+      {menuItems.map((item) => (
+        <div
+          key={item}
+          className={`sidebar-item ${activeSection === item ? 'active' : ''}`}
+          onClick={() => setActiveSection(item)}
+        >
+          {item}
+        </div>
+      ))}
+      <div className="sidebar-version">v.21</div>
+    </div>
+  );
+};
+
+export default AdminSidebar;
